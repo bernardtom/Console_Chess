@@ -1,5 +1,7 @@
 from board import Board
 from console import Console
+from rules import Rules
+from piece import *
 
 ##########################
 # init and show board
@@ -26,5 +28,12 @@ while game_ongoing:
             consol.decode(cmd)
             not_decoded = False
         except:pass
-    
-    print(consol.coo_1,consol.coo_2,consol.type)
+
+##########################
+# check move
+##########################
+    rules = Rules()
+    piece = Piece(consol.coo_1,consol.type)
+    print(rules.diff_start_end_coo(consol.coo_1,consol.coo_2))
+    print(rules.check_piece_exist(piece,board))
+    print(rules.check_destination_color(piece,board,consol.coo_2))

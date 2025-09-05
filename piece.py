@@ -15,21 +15,22 @@ class Piece(EqualMixin):
     """
     Chess Piece
     -------------------------------------------------------------------
-    coo     : coordinates of the piece  : tuple[int]    : (line,column)
-    moved   : True if the piece has     : bool
-              been moved previously 
-    color   : color of the piece        : str           : w / b
-    type    : type of piece             : str           : K / p' / .....
+    coo     : tuple[int]    : coordinates of the piece                      : (line,column)
+    moved   : bool          : True if the piece hasbeen moved previously             
+    color   : str           : color of the piece                            : w / b
+    type    : str           : type of piece                                 : K / p' / .....
             :   King    -> K
                 Queen   -> Q
                 Rook    -> r
                 Bishop  -> b
                 Knight  -> kn
                 Pawn    -> p
-            : K for white ; K' for black
+            :   K for white ; K' for black
     """
     def __init__(self,coo:tuple[int],type:str):
         self.coo = coo
+        self.l = coo[0]
+        self.c = coo[1]
         self.type = type
         self.moved = False # for rock move
         self.color = ""

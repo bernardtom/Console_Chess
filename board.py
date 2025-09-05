@@ -48,3 +48,4 @@ class Board:
 
         print("    # # # # # # # # # # # # # # # # # # # # # ")
         print("     ","  A  "," B  "," C  "," D  "," E  "," F  "," G  "," H  ")
+        print("\n\r")

@@ -34,6 +34,4 @@ while game_ongoing:
 ##########################
     rules = Rules()
     piece = Piece(consol.coo_1,consol.type)
-    print(rules.diff_start_end_coo(consol.coo_1,consol.coo_2))
-    print(rules.check_piece_exist(piece,board))
-    print(rules.check_destination_color(piece,board,consol.coo_2))
+    rules.check_rules(piece,consol.coo_2,board)

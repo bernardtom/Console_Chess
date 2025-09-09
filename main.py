@@ -15,13 +15,12 @@ board.show()
 game_ongoing = True
 player = "white"
 consol = Console()
+rules = Rules()
 while game_ongoing:
     not_decoded = True
     print(f"{player} to play :")
 
-##########################
-# get and decode input cmd
-##########################
+########################## get and decode input cmd ##########################
     while not_decoded:
         cmd = input()
         try:
@@ -29,9 +28,7 @@ while game_ongoing:
             not_decoded = False
         except:pass
 
-##########################
-# check move
-##########################
-    rules = Rules()
+########################## check move ##########################  
     piece = Piece(consol.coo_1,consol.type)
-    rules.check_rules(piece,consol.coo_2,board)
+    if rules.check_rules(piece,consol.coo_2,board):
+        pass
